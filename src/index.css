@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@100;200;300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base custom styles for premium agency aesthetic */
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  color: #e5e5e5;
+  font-family: var(--font-sans);
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cc9933; /* Luxurious pale gold accent */
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(59, 130, 246, 0.2); /* Immersive blue */
+  color: #ffffff;
+}
+
+/* Glassmorphism utility card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px -15px rgba(59, 130, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Elegant Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f3e5ab 0%, #cc9933 50%, #8b6508 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 50%, #707070 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-cyber-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom ambient glowing circles */
+.ambient-glow {
+  filter: blur(140px);
+  opacity: 0.15;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Hidden scrollbar but keeps functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom interactive components */
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Subtle typography rhythm */
+h1, h2, h3, h4, .font-display-custom {
+  font-family: var(--font-display);
+}
+
+.font-mono-custom {
+  font-family: var(--font-mono);
+}
+
+/* Fluid Ambient Blob Keyframes for full aesthetic background */
+@keyframes blob-slow-1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(80px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-50px, 60px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-slow-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-80px, 70px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+}
+
+@keyframes blob-slow-3 {
+  0% {
+    transform: translate(0px, 0px) scale(0.9);
+  }
+  40% {
+    transform: translate(60px, 80px) scale(1.1);
+  }
+  80% {
+    transform: translate(-60px, -50px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(0.9);
+  }
+}
+
+.animate-blob-slow-1 {
+  animation: blob-slow-1 25s infinite ease-in-out;
+}
+
+.animate-blob-slow-2 {
+  animation: blob-slow-2 32s infinite ease-in-out;
+}
+
+.animate-blob-slow-3 {
+  animation: blob-slow-3 20s infinite ease-in-out;
+}
+
